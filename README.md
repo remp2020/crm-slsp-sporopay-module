@@ -1,0 +1,1 @@
+# CRM SLSP Sporopay Module

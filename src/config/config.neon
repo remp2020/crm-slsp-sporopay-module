@@ -1,0 +1,12 @@
+services:
+	moduleManager:
+		setup:
+			- addModule(Crm\SlspSporopayModule\SlspSporopayModule())
+
+	- Crm\SlspSporopayModule\Seeders\ConfigsSeeder
+	- Crm\SlspSporopayModule\Seeders\PaymentGatewaysSeeder
+	- Crm\SlspSporopayModule\Gateways\SlspSporopay
+
+	gatewayFactory:
+		setup:
+			- registerGateway(slsp_sporopay, Crm\SlspSporopayModule\Gateways\SlspSporopay)
