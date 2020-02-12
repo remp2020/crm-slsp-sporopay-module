@@ -6,6 +6,9 @@ services:
 	- Crm\SlspSporopayModule\Seeders\ConfigsSeeder
 	- Crm\SlspSporopayModule\Seeders\PaymentGatewaysSeeder
 	- Crm\SlspSporopayModule\Gateways\SlspSporopay
+	- Crm\SlspSporopayModule\MailConfirmation\SlspMailDownloader
+	- Crm\SlspSporopayModule\MailConfirmation\SlspNotificationMailDownloader(%tempDir%)
+	- Crm\SlspSporopayModule\Commands\SlspMailConfirmationCommand
 
 	gatewayFactory:
 		setup:
