@@ -29,11 +29,11 @@ class SlspNotificationMailDownloader
     {
         $this->tempDir = $tempDir;
 
-        $this->imapHost = $config->get('confirmation_mail_host');
-        $this->imapPort = $config->get('confirmation_mail_port');
-        $this->username = $config->get('confirmation_mail_username');
-        $this->password = $config->get('confirmation_mail_password');
-        $this->processedFolder = $config->get('confirmation_mail_processed_folder');
+        $this->imapHost = $config->get('slsp_notification_confirmation_host');
+        $this->imapPort = $config->get('slsp_notification_confirmation_port');
+        $this->username = $config->get('slsp_notification_confirmation_username');
+        $this->password = $config->get('slsp_notification_confirmation_password');
+        $this->processedFolder = $config->get('slsp_notification_confirmation_processed_folder');
     }
 
     public function download($callback)

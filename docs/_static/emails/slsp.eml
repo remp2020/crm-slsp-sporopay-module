@@ -1,0 +1,111 @@
+Delivered-To: platbysys@example.com
+Received: by 0:0:0:0:0:0:0:0 with SMTP id b18csp1070184otf;
+        Sat, 30 Nov 2019 23:06:16 -0800 (PST)
+X-Received: by 0:0:0:: with SMTP id w7mr1737324wrs.276.1575183976572;
+        Sat, 30 Nov 2019 23:06:16 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1575183976; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=GMtpGWUxjOKKI6bWCB9udT8QRTOQoQfcphakVrc0hrep274Fw0f0TvJqMzf96Q7zw6
+         sh86db+mO2OgZc5rdfB7DqL90+Iuxgyn6zihABaXvqFBQ7PN4agOI0ETSyjDTfCm7wEJ
+         nnwdsj3vbK4qb4FVau3UIDVsoPrvnmVbXADCHeatwNylzwJEi2NJxaOp4l/cvjzrdHeH
+         yXinOSu4md14YXQKqnm6Vba6YK5FOnOt3Ia3+xj1FmxhHEk6XLgd4SKk+DS4Ix5GqOx6
+         Z29zr0PJKu+/bK9XlNLMvPKa99guWDFzrO2yFmbeR1/WEnlsz1WBRH6qwWJUZhtTN1TR
+         Fn3w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :dkim-signature:date:delivered-to;
+        bh=UCJK3+JVW1qoFrN84Uv309fsqyorKeD8XK8e/7ywVs8=;
+        b=txv764XwztZshykL1zz0QGuNjV9f0QeUIqApntqCMmiIINN8b7wGpLjkjrD4slONrH
+         CAN/en58HU6UT80smH8s2Fan097g41mFCY/Wsbu/xN87qESlSxLaq/2fG8FWgQNO9l18
+         TnjoS4M5yYVIO/iKJT3LTs/QEEeC6Y35C4zLrnMkLQV97GZJJ5r+p2lcsfkqLey4s1BY
+         jwjei73NRSgC9VQ7x3DlN6bOL8XdluDE+OxXUz+AqY9HCnXwS+JjURwvtTeQBoyeFjnK
+         lWDy4LFsQMmeH/Ok4ESNoE78pIxWcNudHkxpFVFFZo/sxVTU0DRqZqlRFiDg3ZI4YYy5
+         B+Vw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b=goscjZhX;
+       arc=pass (i=1 spf=pass spfdomain=example.com dkim=pass dkdomain=example.com dmarc=pass fromdomain=example.com);
+       spf=pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom="platby+caf_=platbysys=example.com@example.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+Return-Path: <platby+caf_=platbysys=example.com@example.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [127.0.0.1])
+        by mx.google.com with SMTPS id q3sor4299286wmd.1.2019.11.30.23.06.16
+        for <platbysys@example.com>
+        (Google Transport Security);
+        Sat, 30 Nov 2019 23:06:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) client-ip=127.0.0.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b=goscjZhX;
+       arc=pass (i=1 spf=pass spfdomain=example.com dkim=pass dkdomain=example.com dmarc=pass fromdomain=example.com);
+       spf=pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom="platby+caf_=platbysys=example.com@example.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:date:dkim-signature:from:to
+         :message-id:subject:mime-version:content-transfer-encoding;
+        bh=UCJK3+JVW1qoFrN84Uv309fsqyorKeD8XK8e/7ywVs8=;
+        b=HhuUlBM+HjxRcl4HDXoBB5htP4r+9zB9ML3RVvTXVUYbzBMCGK5pGCqwZD3VrqOroO
+         ts8XOyQTLhCi/unjDrymX2QJBl424lKhrqtqe7lX/bmvshBoS4OEFXF95m2wCLSUCCUI
+         ifXseQwDsSv/lUZlZrzk4/sx7FCaie2VX1GRImzORCXWIcxsyjM6tF/4Dy0tWChlYOo9
+         gYU2JSZLOKzQFHqVRjnoQt0N22v2BBcdmtstBMOVOB0ZCnwrAIL8kZl3p2FLTLleRJe6
+         hKXKOHSIj38hozf1Y8ywnuQQYqYhmiofI4CBF+ywBG8zhCIu5ddLATd9PpUqvKW7r97f
+         wiiw==
+X-Gm-Message-State: APjAAAV9EVy0Wh0pLs3TOLB0euNHyZx2RkKBPYq8wwCaIBCBLxACUF6o
+	sz3xxgcTS/ClqkbG0+cFgbSF1e7nJMkPLxi3HbchtZRlLua+xdj7/g==
+X-Received: by 2002:a1c:7c06:: with SMTP id x6mr23216353wmc.34.1575183976295;
+        Sat, 30 Nov 2019 23:06:16 -0800 (PST)
+X-Forwarded-To: platbysys@example.com
+X-Forwarded-For: platby@example.com platbysys@example.com
+Delivered-To: platby@example.com
+Received: by 2002:a5d:48cc:0:0:0:0:0 with SMTP id p12csp10743252wrs;
+        Sat, 30 Nov 2019 23:06:14 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyn0zmVUW/gwjQIvUOvrvadQWrxLAtmgyMlMH3t0aEcL4Puk5E4tnEjDKtKoN4UHqEoeLII
+X-Received: by 2002:a5d:4749:: with SMTP id o9mr15086553wrs.242.1575183974828;
+        Sat, 30 Nov 2019 23:06:14 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1575183974; cv=none;
+        d=google.com; s=arc-20160816;
+        b=MNuMWyislw3Llx3B6OglmweYZ2RdEMxrOiD+7gFQ5bJsOFkTwwQwKzpUavwwoEjEF5
+         7xoEVX/3FBEG7nKEGQpGt+0g/BeCG5v9m7dm+GXdsF+uOz63Pps8CSs6I4mZ4u1t5SEb
+         6Mfrp95cWA73/V3wiwtwzX7MwOEZIUp3MGhfBZnQkeMz29aqktS4kRpN+xzbwgB21mpk
+         rrJfxIqnDCZ4qUFG3Zh0Yz9Y/rycGP1OQL6Ov2kWYCEnCuA5/ni2++lbK/hrshgwPxX/
+         nRDZABSSw2GupVV0NZdWYQjMpQYBPsVJswA2iWF5DtbPX4X3vmHtBaGvDF6v8kKlA2n5
+         u4uA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :dkim-signature:date;
+        bh=UCJK3+JVW1qoFrN84Uv309fsqyorKeD8XK8e/7ywVs8=;
+        b=QU27BtiLsn7qqc4NaWk0QUlAzzF964dFOsJoYHOmAu+D1jXg+5mcuDP0lcLE1TXMjn
+         q5FE/wN0tdxhHbnTz9ti6AgH02LuZvmaBIIEzGlqs6yv4VR97uRvW6ZHClHW6xMA6Z0H
+         BXDCzFCr3UEzuBd7PKniyz4VYHrKeKvylGUB+qEbYPVZJJhnUWNeI5UaS9JE8iHHB2ZD
+         240nEBQlmOebys1kXBGucect5QtQRAg+/R+okpPEIJ+tYJhX9KmYdoTQCdcOU+EX2ANa
+         7CtEQ1Ngwm3wlEb5EiFzRUGJug0Tm8DiLm4E1inPn87yxNvWPQo3pBq3QhVowJc3CoDr
+         WPVw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b=goscjZhX;
+       spf=pass (google.com: domain of vypis@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom=vypis@example.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+Return-Path: <vypis@example.com>
+Received: from smtp1.example.com (smtp1.example.com. [127.0.0.1])
+        by mx.google.com with ESMTPS id f13si841808wmj.24.2019.11.30.23.06.14
+        for <platby@example.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 30 Nov 2019 23:06:14 -0800 (PST)
+Received-SPF: pass (google.com: domain of vypis@example.com designates 127.0.0.1 as permitted sender) client-ip=127.0.0.1;
+Date: Sun, 1 Dec 2019 08:06:14 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=example.com; s=default;
+	t=1575183974; bh=UCJK3+JVW1qoFrN84Uv309fsqyorKeD8XK8e/7ywVs8=;
+	h=From:To:Subject:From;
+	b=goscjZhXqIY4X0mpUy8dK/BeJ6an5HqgKNsOszelPxTwtGCyCTM9Xs8sav6HJdyw7
+	 mNxqnnFNEzdXIwG65pOM8oYbiohOzRQctdiEu5httbB0HPXDjZXqI1/cHzSVPhlycW
+	 8tZhGmuLPrt2gu+WetDcDkZbwVwoOIp3aXQ4fubYSgAKG1Iq+zadvyzv2ZlCUdeQ06
+	 6lFePIi4ouiDhNg3ILD15lmFO6CHGF5D2orp2yE847CMVHuuczIcrSPsAjNTGqsTLY
+	 ZZ29YThfCiE7NAj4Cqija/I7b3Lc4ncJnPaCgWWNITxJJVd56u/SRce7wo6e+3Q5Bd
+	 3Id5+DHdfBTsg==
+From: vypis@example.com
+To: platby@example.com
+Message-ID: <1552695734.790236.1575183974452@sk01sms01v.dc.example.com>
+Subject: Informacia o realizacii platby
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+000000;0177780000;0900;12.00;EUR;9911912324;0000000123;OK;OK;xDCBmygVheJfzKVXbtwxPSa2l1KYK+dT

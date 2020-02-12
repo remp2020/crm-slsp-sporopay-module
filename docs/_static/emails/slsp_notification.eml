@@ -1,0 +1,128 @@
+Delivered-To: platbysys@example.com
+Received: by 0:0:0:0:0:0:0:0 with SMTP id b18csp5956204otf;
+        Tue, 10 Dec 2019 08:54:05 -0800 (PST)
+X-Received: by 2002:a1c:5603:: with SMTP id k3mr6539749wmb.150.1575996845167;
+        Tue, 10 Dec 2019 08:54:05 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1575996845; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=0E7vaLUF+An55iUA1qw82KVFrITbelEjxb28Q/Eny192pGRVr+ve/t4Nb5k7NQP2ec
+         t8EZE2tFnoGYTC+6RM9rgwWGSF0gcXFpyw8kp3GMy8zqHVxihl35pY9S81OVj2k6PUIP
+         tIm81dYRM3h+qdclfdebxbmkPtq4Z91gVzRL+OBruJtCouX8YbxG6ma5+O+7rBN+CxHG
+         E7LlrirYpz47gcdHwh/2z1EKO6ItIXGShyyJhfULkWmHrkwF6bISnaPMOHN/uxZb8vgK
+         Jtci7fQQZFkthmPesmD1EvxQWkHwLpn/naaL7OA061HzNVR8pG50aNXk+inHzvK7zdDg
+         VA9w==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:dkim-signature:date
+         :delivered-to;
+        bh=61mdlAdnzkPVwSs8Isn4G5MXTkmhxhYjMp3Rf8RStzE=;
+        b=pmLirOl9R3/2zgN+p7gKU/eRoQtxV1JXgKDlT2tuN6Vqx3ElSe/y89vB3pfizRqM7I
+         zew4TXTdqLk2L4Uas8U/8Vt7pMUXmyeMqdBmBilm7p3mongmu/hVO6Btd9Kt1okgVDuq
+         ZQnETHMJ6Croxai8GNwj7ApSfeZ/uFUoKpHM8hKNMKO9eeFqJrTzpeSJhErVJnk+zzh9
+         XbubsxD7kQf5IEF2XIcw93WNmNP+MVsiBDvGBwDW0J9hnssZzqAK/IeP/ov6M3JYwzu/
+         +O9+Sq9xgM04FOA47LYyZFjlEUBmj6ItsTKZcrgAZYtx6MH5QcNcjA3T6omQ8WdGrW3C
+         ZnuQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b="oX/r+ODw";
+       arc=pass (i=1 spf=pass spfdomain=example.com dkim=pass dkdomain=example.com dmarc=pass fromdomain=example.com);
+       spf=pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom="platby+caf_=platbysys=example.com@example.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+Return-Path: <platby+caf_=platbysys=example.com@example.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [127.0.0.1])
+        by mx.google.com with SMTPS id o13sor2413876wrw.46.2019.12.10.08.54.04
+        for <platbysys@example.com>
+        (Google Transport Security);
+        Tue, 10 Dec 2019 08:54:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) client-ip=127.0.0.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b="oX/r+ODw";
+       arc=pass (i=1 spf=pass spfdomain=example.com dkim=pass dkdomain=example.com dmarc=pass fromdomain=example.com);
+       spf=pass (google.com: domain of platby+caf_=platbysys=example.com@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom="platby+caf_=platbysys=example.com@example.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:delivered-to:date:dkim-signature:from:to
+         :message-id:subject:mime-version;
+        bh=61mdlAdnzkPVwSs8Isn4G5MXTkmhxhYjMp3Rf8RStzE=;
+        b=QCEVe+4xY+NarXGqJ53gnMLRZp1RSYcNzLRzxeYhnp9XXYSj4MiB5IOR5QlphTxSry
+         tHbPDUnfQw1Fhy3GJ8sjmMQzaLUQthaal1nbF2Pn6G9eId7+e+6xFqXpx/jzWlYPHJzo
+         z1U0iAqp0sQhdkcvwwa1M49UR+iIXQNgDT5nBvVG5DC/Bo2ozdhsrw8SOcKvgXAit4o4
+         kAjYDdTSgsDm5ioQ6OoEEuYQj4p8crOTDftp55WZT4kmvodo0eOoiaahz8aGDiFPsVjQ
+         EuSytoWFlyGaPKuQIqiJbcPYKDChPD0XXhPRpTu4NGtuS5oDXdyxcw/mxxRDVxFzqhrv
+         xFfw==
+X-Gm-Message-State: APjAAAUZItbmJY+xkzpOZp3sOmhqcaW1UrqhFZLLwpvbN4b4+MOrqBvt
+	MeVP0eZP3Pzqopis63IQDPi6rT+aJuXEYUd/TDqar7GwnE0vuL77JA==
+X-Received: by 2002:adf:9427:: with SMTP id 36mr4394320wrq.166.1575996844844;
+        Tue, 10 Dec 2019 08:54:04 -0800 (PST)
+X-Forwarded-To: platbysys@example.com
+X-Forwarded-For: platby@example.com platbysys@example.com
+Delivered-To: platby@example.com
+Received: by 2002:adf:ed0f:0:0:0:0:0 with SMTP id a15csp5841913wro;
+        Tue, 10 Dec 2019 08:54:03 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxbJTLrk429TE9XGcY8HB+KVA30k+oBZ0somhXko6poPUa/ausePV0M9F9Bbqqe+pAADJlR
+X-Received: by 2002:a5d:4d0e:: with SMTP id z14mr4241574wrt.208.1575996843056;
+        Tue, 10 Dec 2019 08:54:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1575996843; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YHXCHyOuE+lkGBrgkC4ItqoNe5xN8tWlVuXHQ84wPkNQSuAHhz+16f7tIkTz6m+K0S
+         xQqZJJl6hAkaU0wNkySf/bzYnfU+wnbW6vvWGSw5eLOGAAFY4K45otJwfCZJcaGG6sWu
+         kuIWfYtGqtPCSpAz9Bye1BKx70Tob+4Wl6S26zMNyJnEGbdfgviXthMm03wzmo0y/JjC
+         RP5FJeuc3uZJfTa1Njaf9ZDDUQ+gkVOSSZRPUEsMBFiLv1GoEJ0EbD9LED2Ya/hiZIKT
+         M9hE8JR1lAzhLe6Ojt6kx7N7bFWnl9ZgLR0tQZkRjfzZIBJfzAd6RPjwSruLPvflOpZH
+         j0ZA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:dkim-signature:date;
+        bh=61mdlAdnzkPVwSs8Isn4G5MXTkmhxhYjMp3Rf8RStzE=;
+        b=q6HH5jiMODuMcNL72AO6C2Uli+Z+U8MWaCw/j5bQF4UHoh/WNAK06hDYHKJS5y2rqd
+         A/oqOzEjShy4yXXa5a7KcUil9RdUo8yBO6zTVoLjCSKoM8i1iAGnT8CAroAkB5OAfGwb
+         0EDsW8AGNmPWaSM4JEYE9nxgUeR0v/bXWVDoCCBQfixV6tlTVq0QnCjL5QJTgqYZwVwX
+         NEkoZXKhvjHpqDDAP1dJzi36rQwhGGrVbqLD4qbLLoUcI0NaYeZ38solwn5dxWQzf2JU
+         OqQBaOxlIOt4IALDKJHTdLCleUys/htMqUy8Dp9drsGGvdnbIKUKEq9kMYVGuOdrvS8y
+         hKLw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@example.com header.s=default header.b="oX/r+ODw";
+       spf=pass (google.com: domain of notifikacie@example.com designates 127.0.0.1 as permitted sender) smtp.mailfrom=notifikacie@example.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=example.com
+Return-Path: <notifikacie@example.com>
+Received: from smtp1.example.com (smtp1.example.com. [127.0.0.1])
+        by mx.google.com with ESMTPS id g6si3353521wrs.180.2019.12.10.08.54.02
+        for <platby@example.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 10 Dec 2019 08:54:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of notifikacie@example.com designates 127.0.0.1 as permitted sender) client-ip=127.0.0.1;
+Date: Tue, 10 Dec 2019 17:54:02 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=example.com; s=default;
+	t=1575996842; bh=61mdlAdnzkPVwSs8Isn4G5MXTkmhxhYjMp3Rf8RStzE=;
+	h=From:To:Subject:From;
+	b=oX/r+ODw3lUdqf3ZP2VaZBOEB42DAdLLb870hF3wjjANMC0YTNM3lxPsDI1xVgD/E
+	 ML8mhAPoCmmSzXw1jWKXn5avUjrB1jJ3XOdWcK2vUJogf5slt+zzRplUv5BCijw5AR
+	 DHLwlpjyHPwkB1UkyXr3K+F661ygk0p7rqODfyrYTvdKLm5qbHngMB1n3RqmkzR+/L
+	 IIZoihD7KppwrQgugZq52SXPfu3C/T/5i1qeb/jmu74y+Zjrz8t2A6zHKdyWLUChSy
+	 1b8DTa1PddPfExApfAGmvHExDPhatfX3WZanZE8o63cIgui4PdWM89F7Q7h3QN1ru0
+	 z6YNq9CPIexEQ==
+From: =?UTF-8?Q?Notifik=C3=A1cie_SLSP?= <notifikacie@example.com>
+To: platby@example.com
+Message-ID: <229026156.332214.1575996842593@sk01sms01v.dc.example.com>
+Subject: Notifikacia
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_332213_11267809.1575996842591"
+
+------=_Part_332213_11267809.1575996842591
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Sifrovana sprava sa nachadza v prilohe. / Encrypted message is attached.
+------=_Part_332213_11267809.1575996842591
+Content-Type: application/octet-stream; name=K201210.zip
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=K201210.zip
+
+UEsDBBQAAAAIAK9STlBrf1TD8AAAAKcCAAALABwASzIwMTIxMC50eHRVVAkAA5pmRl7xZUZedXgL
+AAEE6AMAAAToAwAArVJBasMwELwX+od9gVkpke3VMfTUQC6mPvRSVOLSxCYbYsUQvbDf6K39QiHQ
+DW2FGtqcPBexmtnd0SCALyiYNeGZPQ/c+80RhrZzS/gDCpVW9HPEW50hXl/FuprjFAkjiIzSkyKH
+BQ9u3cIth+Yp0deVJVKKtKhymFf2u2+CJVSxEjLpAUiLhxGQzlu8Bh7g483vLczuoChl+dQg6VT0
+4nrYds5vJLSVlVAyCULjKZ/CGrSaUnV9yvQA/ZY7GXoeGdTHx2YXaTxjx37fvVh2nlsxkpcGTUa/
+1t2sxEe4rKk7J3/lHcJyx+vmH9E4vj8BUEsBAh4DFAAAAAgAr1JOUGt/VMPwAAAApwIAAAsAGAAA
+AAAAAQAAALSBAAAAAEsyMDEyMTAudHh0VVQFAAOaZkZedXgLAAEE6AMAAAToAwAAUEsFBgAAAAAB
+AAEAUQAAADUBAAAAAA==
+------=_Part_332213_11267809.1575996842591--

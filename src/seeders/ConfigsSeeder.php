@@ -77,6 +77,115 @@ class ConfigsSeeder implements ISeeder
             $sorting++,
             'slsp_sporopay.config.mode.description'
         );
+
+        $categoryName = 'payments.config.category_confirmation';
+        $category = $category = $this->configCategoriesRepository->loadByName($categoryName);
+        if (!$category) {
+            $category = $category = $this->configCategoriesRepository->add($categoryName, 'fa fa-check-double', 1600);
+            $output->writeln('  <comment>* config category <info>Potvrdzovacie e-maily</info> created</comment>');
+        } else {
+            $output->writeln('  * config category <info>Potvrdzovacie e-maily</info> exists');
+        }
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_confirmation_host',
+            'slsp_sporopay.config.slsp_confirmation_host.name',
+            '',
+            100,
+            'slsp_sporopay.config.slsp_confirmation_host.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_confirmation_port',
+            'slsp_sporopay.config.slsp_confirmation_port.name',
+            '',
+            101,
+            'slsp_sporopay.config.slsp_confirmation_port.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_confirmation_username',
+            'slsp_sporopay.config.slsp_confirmation_username.name',
+            '',
+            102,
+            'slsp_sporopay.config.slsp_confirmation_username.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_confirmation_password',
+            'slsp_sporopay.config.slsp_confirmation_password.name',
+            '',
+            103,
+            'slsp_sporopay.config.slsp_confirmation_password.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_confirmation_processed_folder',
+            'slsp_sporopay.config.slsp_confirmation_processed_folder.name',
+            '',
+            104,
+            'slsp_sporopay.config.slsp_confirmation_processed_folder.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_notification_confirmation_host',
+            'slsp_sporopay.config.slsp_notification_confirmation_host.name',
+            '',
+            105,
+            'slsp_sporopay.config.slsp_notification_confirmation_host.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_notification_confirmation_port',
+            'slsp_sporopay.config.slsp_notification_confirmation_port.name',
+            '',
+            106,
+            'slsp_sporopay.config.slsp_notification_confirmation_port.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_notification_confirmation_username',
+            'slsp_sporopay.config.slsp_notification_confirmation_username.name',
+            '',
+            107,
+            'slsp_sporopay.config.slsp_notification_confirmation_username.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_notification_confirmation_password',
+            'slsp_sporopay.config.slsp_notification_confirmation_password.name',
+            '',
+            108,
+            'slsp_sporopay.config.slsp_notification_confirmation_password.description'
+        );
+
+        $this->addPaymentConfig(
+            $output,
+            $category,
+            'slsp_notification_confirmation_processed_folder',
+            'slsp_sporopay.config.slsp_notification_confirmation_processed_folder.name',
+            '',
+            109,
+            'slsp_sporopay.config.slsp_notification_confirmation_processed_folder.description'
+        );
     }
 
     private function addPaymentConfig(OutputInterface $output, $category, $name, $displayName, $value, $sorting, $description = null)
