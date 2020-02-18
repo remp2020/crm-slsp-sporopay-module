@@ -30,17 +30,17 @@ config:
         name: SLSP zložka
         description: "IMAP zložka do ktoreho sa presunie email po spracovani (napr. INBOX/processed) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
     slsp_notification_confirmation_host:
-        name: SLSP notifikacia host
+        name: SLSP notifikácia host
         description: "IMAP host pre pripojenie (napr. imap.gmail.com) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
     slsp_notification_confirmation_port:
-        name: SLSP notifikacia port
+        name: SLSP notifikácia port
         description: "IMAP port pre pripojenie (napr. 993) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
     slsp_notification_confirmation_username:
-        name: SLSP notifikacia username
+        name: SLSP notifikácia username
         description: "IMAP prihlasovacie meno pre pripojenie (napr. example@gmail.com) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
     slsp_notification_confirmation_password:
-        name: SLSP notifikacia password
+        name: SLSP notifikácia password
         description: "IMAP heslo pre pripojenie (napr. password) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
     slsp_notification_confirmation_processed_folder:
-        name: SLSP notifikacia zložka
+        name: SLSP notifikácia zložka
         description: "IMAP zložka do ktoreho sa presunie email po spracovani (napr. INBOX/processed) (<a href='https://github.com/remp2020/crm-slsp-sporopay-module#confirmation-e-mails' target='_blank'>info</a>)"
