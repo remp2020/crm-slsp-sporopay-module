@@ -10,7 +10,7 @@ Examples of confirmation mails received from banks. Every type of mail has it's 
 
 **Subject:** Informacia o realizacii platby
 
-[Example e-mail file](docs/_static/emails/slsp.eml)
+[Example e-mail file](docs/slsp.eml)
 
 ### SLSP Notification
 
@@ -18,4 +18,4 @@ Examples of confirmation mails received from banks. Every type of mail has it's 
 
 **Subject:** Notifikacia
 
-[Example e-mail file](docs/_static/emails/slsp_notification.eml)
+[Example e-mail file](docs/slsp_notification.eml)
