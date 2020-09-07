@@ -3,8 +3,8 @@
 namespace Crm\SlspSporopayModule\Gateways;
 
 use Crm\PaymentsModule\Gateways\GatewayAbstract;
-use Omnipay\SporoPay\Gateway;
 use Omnipay\Omnipay;
+use Omnipay\SporoPay\Gateway;
 use Omnipay\SporoPay\Message\PurchaseRequest;
 
 class SlspSporopay extends GatewayAbstract
@@ -19,7 +19,7 @@ class SlspSporopay extends GatewayAbstract
         $this->gateway = Omnipay::create('SporoPay');
 
         $this->gateway->setSharedSecret($this->applicationConfig->get('slsp_sporopay_sharedsecret'));
-        $this->gateway->setTestMode(!($this->applicationConfig->get('slsp_sporopay_accountnumber') == 'live'));
+        $this->gateway->setTestMode($this->applicationConfig->get('slsp_sporopay_mode') !== 'live');
     }
 
     public function begin($payment)
