@@ -2,12 +2,12 @@
 
 namespace Crm\SlspSporopayModule;
 
+use Crm\ApplicationModule\Commands\CommandsContainerInterface;
 use Crm\ApplicationModule\CrmModule;
 use Crm\ApplicationModule\SeederManager;
+use Crm\SlspSporopayModule\Commands\SlspMailConfirmationCommand;
 use Crm\SlspSporopayModule\Seeders\ConfigsSeeder;
 use Crm\SlspSporopayModule\Seeders\PaymentGatewaysSeeder;
-use Crm\ApplicationModule\Commands\CommandsContainerInterface;
-use Crm\SlspSporopayModule\Commands\SlspMailConfirmationCommand;
 
 class SlspSporopayModule extends CrmModule
 {
