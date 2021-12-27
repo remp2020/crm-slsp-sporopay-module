@@ -9,7 +9,7 @@ use Omnipay\SporoPay\Message\PurchaseRequest;
 
 class SlspSporopay extends GatewayAbstract
 {
-    const GATEWAY_CODE = 'slsp_sporopay';
+    public const GATEWAY_CODE = 'slsp_sporopay';
 
     /** @var Gateway */
     protected $gateway;
