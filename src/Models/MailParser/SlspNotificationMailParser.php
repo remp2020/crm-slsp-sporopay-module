@@ -7,11 +7,7 @@ use Tomaj\BankMailsParser\Parser\ParserInterface;
 
 class SlspNotificationMailParser implements ParserInterface
 {
-    /**
-     * @param $content
-     * @return MailContent
-     */
-    public function parse($content)
+    public function parse(string $content): ?MailContent
     {
         $mailContent = new MailContent();
         $result = [];

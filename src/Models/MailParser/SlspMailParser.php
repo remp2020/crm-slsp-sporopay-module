@@ -7,11 +7,7 @@ use Tomaj\BankMailsParser\Parser\ParserInterface;
 
 class SlspMailParser implements ParserInterface
 {
-    /**
-     * @param $content
-     * @return MailContent
-     */
-    public function parse($content)
+    public function parse(string $content): ?MailContent
     {
         $results = [];
         $res = preg_match('/\d{6};(\d{10});\d{4};([0-9.]+);([A-Z]+);(\d{10});(\d{10})/m', $content, $results);
