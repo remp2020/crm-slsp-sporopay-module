@@ -20,6 +20,7 @@ class SlspSporopay extends GatewayAbstract
 
         $this->gateway->setSharedSecret($this->applicationConfig->get('slsp_sporopay_sharedsecret'));
         $this->gateway->setTestMode($this->applicationConfig->get('slsp_sporopay_mode') !== 'live');
+        $this->gateway->setTestHost($this->testHost);
     }
 
     public function begin($payment)
