@@ -11,12 +11,13 @@ class SlspSporopay extends GatewayAbstract
 {
     public const GATEWAY_CODE = 'slsp_sporopay';
 
-    /** @var Gateway */
-    protected $gateway;
+    protected Gateway $gateway;
 
     protected function initialize()
     {
-        $this->gateway = Omnipay::create('SporoPay');
+        /** @var Gateway $gateway */
+        $gateway = Omnipay::create('SporoPay');
+        $this->gateway = $gateway;
 
         $this->gateway->setSharedSecret($this->applicationConfig->get('slsp_sporopay_sharedsecret'));
         $this->gateway->setTestMode($this->applicationConfig->get('slsp_sporopay_mode') !== 'live');
