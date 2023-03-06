@@ -5,6 +5,7 @@ namespace Crm\SlspSporopayModule\MailConfirmation;
 use Crm\ApplicationModule\Config\ApplicationConfig;
 use Crm\SlspSporopayModule\MailParser\SlspNotificationMailParser;
 use Nette\Utils\FileSystem;
+use Nette\Utils\Random;
 use Tomaj\ImapMailDownloader\Downloader;
 use Tomaj\ImapMailDownloader\Email;
 use Tomaj\ImapMailDownloader\MailCriteria;
@@ -82,7 +83,7 @@ class SlspNotificationMailDownloader
             return false;
         }
 
-        $filePath = $this->tempDir . DIRECTORY_SEPARATOR . 'payments-mail-parser/' . uniqid() . '.zip';
+        $filePath = $this->tempDir . DIRECTORY_SEPARATOR . 'payments-mail-parser/' . Random::generate() . '.zip';
 
         FileSystem::write($filePath, array_values($email->getAttachments())[0]['attachment']);
 
