@@ -3,7 +3,7 @@
 namespace Crm\SlspSporopayModule\Tests;
 
 use Crm\PaymentsModule\Tests\PaymentsTestCase;
-use Crm\SlspSporopayModule\MailParser\SlspNotificationMailParser;
+use Crm\SlspSporopayModule\Models\MailParser\SlspNotificationMailParser;
 
 class SlspNotificationMailParserTest extends PaymentsTestCase
 {
