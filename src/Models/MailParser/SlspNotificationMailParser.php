@@ -1,6 +1,6 @@
 <?php
 
-namespace Crm\SlspSporopayModule\MailParser;
+namespace Crm\SlspSporopayModule\Models\MailParser;
 
 use Tomaj\BankMailsParser\MailContent;
 use Tomaj\BankMailsParser\Parser\ParserInterface;
