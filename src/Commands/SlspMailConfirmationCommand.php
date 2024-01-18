@@ -3,9 +3,9 @@
 namespace Crm\SlspSporopayModule\Commands;
 
 use Crm\ApplicationModule\Config\ApplicationConfig;
-use Crm\PaymentsModule\MailConfirmation\MailProcessor;
-use Crm\PaymentsModule\Models\MailDownloader\EmailInterface;
-use Crm\PaymentsModule\Models\MailDownloader\MailDownloaderInterface;
+use Crm\PaymentsModule\Models\MailConfirmation\EmailInterface;
+use Crm\PaymentsModule\Models\MailConfirmation\MailDownloaderInterface;
+use Crm\PaymentsModule\Models\MailConfirmation\MailProcessor;
 use Crm\SlspSporopayModule\Models\MailParser\SlspMailParser;
 use Crm\SlspSporopayModule\Models\MailParser\SlspNotificationMailParser;
 use Nette\Utils\FileSystem;

@@ -2,7 +2,7 @@
 
 namespace Crm\SlspSporopayModule\Gateways;
 
-use Crm\PaymentsModule\Gateways\GatewayAbstract;
+use Crm\PaymentsModule\Models\Gateways\GatewayAbstract;
 use Omnipay\Omnipay;
 use Omnipay\SporoPay\Gateway;
 use Omnipay\SporoPay\Message\PurchaseRequest;

@@ -3,7 +3,7 @@
 namespace Crm\SlspSporopayModule\Seeders;
 
 use Crm\ApplicationModule\Seeders\ISeeder;
-use Crm\PaymentsModule\Repository\PaymentGatewaysRepository;
+use Crm\PaymentsModule\Repositories\PaymentGatewaysRepository;
 use Crm\SlspSporopayModule\Gateways\SlspSporopay;
 use Symfony\Component\Console\Output\OutputInterface;
 
