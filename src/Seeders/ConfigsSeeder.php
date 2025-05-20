@@ -23,7 +23,7 @@ class ConfigsSeeder implements ISeeder
     public function __construct(
         ConfigCategoriesRepository $configCategoriesRepository,
         ConfigsRepository $configsRepository,
-        ConfigBuilder $configBuilder
+        ConfigBuilder $configBuilder,
     ) {
         $this->configCategoriesRepository = $configCategoriesRepository;
         $this->configsRepository = $configsRepository;
@@ -43,7 +43,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.sharedsecret.name',
             'slsp_sporopay.config.sharedsecret.description',
             'Z3qY08EpvLlAAoMZdnyUdQ==',
-            $sorting++
+            $sorting++,
         );
 
         $this->addConfig(
@@ -54,7 +54,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.accountnumberprefix.name',
             'slsp_sporopay.config.accountnumberprefix.description',
             '999999',
-            $sorting++
+            $sorting++,
         );
 
         $this->addConfig(
@@ -65,7 +65,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.accountnumber.name',
             'slsp_sporopay.config.accountnumber.description',
             '1111111111',
-            $sorting++
+            $sorting++,
         );
 
         $this->addConfig(
@@ -76,7 +76,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.specificsymbol.name',
             'slsp_sporopay.config.specificsymbol.description',
             '0000000000',
-            $sorting++
+            $sorting++,
         );
 
         $this->addConfig(
@@ -87,7 +87,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.mode.name',
             'slsp_sporopay.config.mode.description',
             'test',
-            $sorting++
+            $sorting++,
         );
 
         $category = $this->configCategoriesRepository->loadByName('payments.config.category_confirmation');
@@ -106,7 +106,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_confirmation_host.name',
             'slsp_sporopay.config.slsp_confirmation_host.description',
             null,
-            1101
+            1101,
         );
 
         $this->addConfig(
@@ -117,7 +117,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_confirmation_port.name',
             'slsp_sporopay.config.slsp_confirmation_port.description',
             null,
-            1102
+            1102,
         );
 
         $this->addConfig(
@@ -128,7 +128,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_confirmation_username.name',
             'slsp_sporopay.config.slsp_confirmation_username.description',
             null,
-            1103
+            1103,
         );
 
         $this->addConfig(
@@ -139,7 +139,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_confirmation_password.name',
             'slsp_sporopay.config.slsp_confirmation_password.description',
             null,
-            1104
+            1104,
         );
 
         $this->addConfig(
@@ -150,7 +150,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_confirmation_processed_folder.name',
             'slsp_sporopay.config.slsp_confirmation_processed_folder.description',
             null,
-            1105
+            1105,
         );
 
         $this->addConfig(
@@ -161,7 +161,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_notification_confirmation_host.name',
             'slsp_sporopay.config.slsp_notification_confirmation_host.description',
             null,
-            1201
+            1201,
         );
 
         $this->addConfig(
@@ -172,7 +172,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_notification_confirmation_port.name',
             'slsp_sporopay.config.slsp_notification_confirmation_port.description',
             null,
-            1202
+            1202,
         );
 
         $this->addConfig(
@@ -183,7 +183,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_notification_confirmation_username.name',
             'slsp_sporopay.config.slsp_notification_confirmation_username.description',
             null,
-            1203
+            1203,
         );
 
         $this->addConfig(
@@ -194,7 +194,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_notification_confirmation_password.name',
             'slsp_sporopay.config.slsp_notification_confirmation_password.description',
             null,
-            1204
+            1204,
         );
 
         $this->addConfig(
@@ -205,7 +205,7 @@ class ConfigsSeeder implements ISeeder
             'slsp_sporopay.config.slsp_notification_confirmation_processed_folder.name',
             'slsp_sporopay.config.slsp_notification_confirmation_processed_folder.description',
             null,
-            1205
+            1205,
         );
     }
 }

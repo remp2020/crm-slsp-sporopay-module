@@ -24,7 +24,7 @@ class PaymentGatewaysSeeder implements ISeeder
                 'SLSP Sporopay',
                 $code,
                 110,
-                true
+                true,
             );
             $output->writeln("  <comment>* payment type <info>{$code}</info> created</comment>");
         } else {

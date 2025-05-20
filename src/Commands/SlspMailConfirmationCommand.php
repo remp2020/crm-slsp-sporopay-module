@@ -96,7 +96,7 @@ class SlspMailConfirmationCommand extends Command
         if (empty($attachments)) {
             Debugger::log(
                 'missing slsp notification mail attachment for payment sent on: ' . $email->getDate(),
-                ILogger::WARNING
+                ILogger::WARNING,
             );
             return false;
         }
