@@ -4,6 +4,7 @@ namespace Crm\SlspSporopayModule\Commands;
 
 use Crm\ApplicationModule\Models\Config\ApplicationConfig;
 use Crm\PaymentsModule\Models\MailConfirmation\EmailInterface;
+use Crm\PaymentsModule\Models\MailConfirmation\MailCriteria;
 use Crm\PaymentsModule\Models\MailConfirmation\MailDownloaderInterface;
 use Crm\PaymentsModule\Models\MailConfirmation\MailProcessor;
 use Crm\SlspSporopayModule\Models\MailParser\SlspMailParser;
@@ -13,7 +14,6 @@ use Nette\Utils\Random;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Tomaj\ImapMailDownloader\MailCriteria;
 use Tracy\Debugger;
 use Tracy\ILogger;
 
@@ -95,7 +95,7 @@ class SlspMailConfirmationCommand extends Command
         $attachments = $email->getAttachments();
         if (empty($attachments)) {
             Debugger::log(
-                'missing slsp notification mail attachment for payment sent on: ' . $email->getDate(),
+                'missing slsp notification mail attachment for payment sent on: ' . $email->getDate()->format(DATE_RFC3339),
                 ILogger::WARNING,
             );
             return false;
